@@ -38,41 +38,61 @@ public class GameInstanceTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        GameInstance instance = new GameInstance();
-        String expResult = "";
+        GameInstance instance = new GameInstance(1,2,3);
+        String expResult = "Winning Door:1, Other Doors:2,3";
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
      * Test of findOtherNonWinningDoor method, of class GameInstance.
      */
     @Test
-    public void testFindOtherNonWinningDoor() {
-        System.out.println("findOtherNonWinningDoor");
-        int choice = 0;
-        GameInstance instance = new GameInstance();
-        int expResult = 0;
+    public void testFindOtherNonWinningDoorChoiceEqualsWin() {
+        System.out.println("find Other Non Winning Door When Choice is the winning door");
+        int choice = 1;
+        GameInstance instance = new GameInstance(1, 2, 3);
+        int expResult = 3;
         int result = instance.findOtherNonWinningDoor(choice);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
+    /**
+     * Test of findOtherNonWinningDoor method, of class GameInstance.
+     */
+    @Test
+    public void testFindOtherNonWinningDoorChoiceEqualsOther() {
+        System.out.println("find Other Non Winning Door When Choice is the other door");
+        int choice = 3;
+        GameInstance instance = new GameInstance(1, 2, 3);
+        int expResult = 1;
+        int result = instance.findOtherNonWinningDoor(choice);
+        assertEquals(expResult, result);
+    }
+    
+    /**
+     * Test of findOtherNonWinningDoor method, of class GameInstance.
+     */
+    @Test
+    public void testFindOtherNonWinningDoorChoiceEqualsLose() {
+        System.out.println("find Other Non Winning Door When Choice is the losing door");
+        int choice = 2;
+        GameInstance instance = new GameInstance(1, 2, 3);
+        int expResult = 1;
+        int result = instance.findOtherNonWinningDoor(choice);
+        assertEquals(expResult, result);
+    }
     /**
      * Test of getWin method, of class GameInstance.
      */
     @Test
     public void testGetWin() {
         System.out.println("getWin");
-        GameInstance instance = new GameInstance();
-        int expResult = 0;
+        GameInstance instance = new GameInstance(1,2,3);
+        int expResult = 1;
         int result = instance.getWin();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -81,11 +101,10 @@ public class GameInstanceTest {
     @Test
     public void testSetWin() {
         System.out.println("setWin");
-        int win = 0;
+        int win = 1;
         GameInstance instance = new GameInstance();
         instance.setWin(win);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(win, instance.getWin());
     }
 
     /**
@@ -94,12 +113,10 @@ public class GameInstanceTest {
     @Test
     public void testGetLose() {
         System.out.println("getLose");
-        GameInstance instance = new GameInstance();
-        int expResult = 0;
+        GameInstance instance = new GameInstance(1,2,3);
+        int expResult = 2;
         int result = instance.getLose();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result);        
     }
 
     /**
@@ -108,11 +125,10 @@ public class GameInstanceTest {
     @Test
     public void testSetLose() {
         System.out.println("setLose");
-        int lose = 0;
+        int lose = 2;
         GameInstance instance = new GameInstance();
         instance.setLose(lose);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(lose, instance.getLose());
     }
 
     /**
@@ -121,12 +137,10 @@ public class GameInstanceTest {
     @Test
     public void testGetOther() {
         System.out.println("getOther");
-        GameInstance instance = new GameInstance();
-        int expResult = 0;
+        GameInstance instance = new GameInstance(1,2,3);
+        int expResult = 3;
         int result = instance.getOther();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -135,11 +149,10 @@ public class GameInstanceTest {
     @Test
     public void testSetOther() {
         System.out.println("setOther");
-        int other = 0;
+        int other = 3;
         GameInstance instance = new GameInstance();
         instance.setOther(other);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(other, instance.getOther());
     }
     
 }
