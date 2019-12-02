@@ -29,3 +29,7 @@ gradle build
 ```bash
 gradle run
 ```
+
+## License
+
+This project is [MIT LIcensed](LICENSE).
