@@ -1,34 +1,35 @@
 package com.vincentramdhanie.montyhall;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  *
  * @author Vincent Ramdhanie
  */
 public class GameInstanceTest {
-    
+
     public GameInstanceTest() {
     }
-    
-    @BeforeClass
+
+    @BeforeAll
     public static void setUpClass() {
     }
-    
-    @AfterClass
+
+    @AfterAll
     public static void tearDownClass() {
     }
-    
-    @Before
+
+    @BeforeEach
     public void setUp() {
     }
-    
-    @After
+
+    @AfterEach
     public void tearDown() {
     }
 
@@ -38,11 +39,11 @@ public class GameInstanceTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        GameInstance instance = new GameInstance(1,2,3);
+        GameInstance instance = new GameInstance(1, 2, 3);
         String expResult = "Winning Door:1, Other Doors:2,3";
         String result = instance.toString();
         assertEquals(expResult, result);
-        
+
     }
 
     /**
@@ -70,7 +71,7 @@ public class GameInstanceTest {
         int result = instance.findOtherNonWinningDoor(choice);
         assertEquals(expResult, result);
     }
-    
+
     /**
      * Test of findOtherNonWinningDoor method, of class GameInstance.
      */
@@ -83,13 +84,14 @@ public class GameInstanceTest {
         int result = instance.findOtherNonWinningDoor(choice);
         assertEquals(expResult, result);
     }
+
     /**
      * Test of getWin method, of class GameInstance.
      */
     @Test
     public void testGetWin() {
         System.out.println("getWin");
-        GameInstance instance = new GameInstance(1,2,3);
+        GameInstance instance = new GameInstance(1, 2, 3);
         int expResult = 1;
         int result = instance.getWin();
         assertEquals(expResult, result);
@@ -113,10 +115,10 @@ public class GameInstanceTest {
     @Test
     public void testGetLose() {
         System.out.println("getLose");
-        GameInstance instance = new GameInstance(1,2,3);
+        GameInstance instance = new GameInstance(1, 2, 3);
         int expResult = 2;
         int result = instance.getLose();
-        assertEquals(expResult, result);        
+        assertEquals(expResult, result);
     }
 
     /**
@@ -137,7 +139,7 @@ public class GameInstanceTest {
     @Test
     public void testGetOther() {
         System.out.println("getOther");
-        GameInstance instance = new GameInstance(1,2,3);
+        GameInstance instance = new GameInstance(1, 2, 3);
         int expResult = 3;
         int result = instance.getOther();
         assertEquals(expResult, result);
@@ -154,5 +156,5 @@ public class GameInstanceTest {
         instance.setOther(other);
         assertEquals(other, instance.getOther());
     }
-    
+
 }

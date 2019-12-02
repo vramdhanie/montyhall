@@ -1,34 +1,33 @@
 package com.vincentramdhanie.montyhall;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  *
  * @author Vincent Ramdhanie
  */
 public class GuesserTest {
-    
+
     public GuesserTest() {
     }
-    
-    @BeforeClass
+
+    @BeforeAll
     public static void setUpClass() {
     }
-    
-    @AfterClass
+
+    @AfterAll
     public static void tearDownClass() {
     }
-    
-    @Before
+
+    @BeforeEach
     public void setUp() {
     }
-    
-    @After
+
+    @AfterEach
     public void tearDown() {
     }
 
@@ -37,7 +36,7 @@ public class GuesserTest {
      */
     @Test
     public void testRoundWithNoChange() {
-        //??
+        // ??
     }
 
     /**
@@ -45,7 +44,7 @@ public class GuesserTest {
      */
     @Test
     public void testRoundWithChange() {
-        //??
+        // ??
     }
 
     /**
@@ -53,7 +52,7 @@ public class GuesserTest {
      */
     @Test
     public void testRunSimulation() {
-        //??
+        // ??
     }
 
     /**
@@ -61,7 +60,7 @@ public class GuesserTest {
      */
     @Test
     public void testMain() {
-        //no need to test this
+        // no need to test this
     }
-    
+
 }
