@@ -37,3 +37,12 @@ ehthumbs.db
 Thumbs.db
 
 build/*
+
+# Gradle
+.gradle/
+
+# VS Code
+.vscode/
+.project
+.settings/
+.classpath
